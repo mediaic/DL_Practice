@@ -27,3 +27,7 @@ pip3 install torchvision
 You can also directly use the [insall script](https://github.com/mediaic/DL_Practice/blob/master/install.sh) in Ubuntu 16.04 LTS.
 
 ## References
+
+[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
+
+[TensorFlow docs](https://www.tensorflow.org/versions/r1.6/get_started/)

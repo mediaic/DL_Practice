@@ -57,6 +57,9 @@ Let’s train different models for recognizing MNIST digits! Please compare the 
 
 7. Apply [batch normalization](https://pytorch.org/docs/stable/nn.html?highlight=batchnorm#normalization-layers) to your models.
 
-9. Replace the ReLU units in your models by [LeakyReLU](https://pytorch.org/docs/stable/nn.html#torch.nn.LeakyReLU) or [SELU](https://pytorch.org/docs/stable/nn.html#torch.nn.SELU).
+8. Replace the ReLU units in your models by [LeakyReLU](https://pytorch.org/docs/stable/nn.html#torch.nn.LeakyReLU) or [SELU](https://pytorch.org/docs/stable/nn.html#torch.nn.SELU).
 
 ## Saving your model
+It is important to save your model at any time, especially when you want to reproduce your results or contiune the training procedure. One can easily save the model and the parapeters by using the [save/load functions](https://pytorch.org/docs/master/notes/serialization.html). While please also note that when you need to resume training, you should follow this [example](https://discuss.pytorch.org/t/saving-and-loading-a-model-in-pytorch/2610/3) to save all required state dictionaries.
+
+Now please save the model which achieves best performance among the above variants. Try to reproduce your results using the save/load functions instead of running a new training procedure.
