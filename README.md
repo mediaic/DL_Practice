@@ -14,12 +14,16 @@ Students are required to finish their works using either [PyTorch](https://githu
 * python3.5+
 * CUDA 9.0
 * cuDNN 7
-* TensorFlow 1.6 : pip3 install tensorflow-gpu==1.6  
-or  
-* Pytorch 0.4.0 :  
+* TensorFlow 1.6
+```
+pip3 install tensorflow-gpu==1.6
+```
+or
+* Pytorch 0.4.0
+```
 pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp35-cp35m-linux_x86_64.whl  
 pip3 install torchvision  
-
-You can also use the [insall script](https://github.com/mediaic/DL_Practice/blob/master/install.sh) in Ubuntu 16.04 LTS.
+```
+You can also directly use the [insall script](https://github.com/mediaic/DL_Practice/blob/master/install.sh) in Ubuntu 16.04 LTS.
 
 ## References
