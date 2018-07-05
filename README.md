@@ -20,6 +20,6 @@ or
 pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp35-cp35m-linux_x86_64.whl  
 pip3 install torchvision  
 
-You can also use the insall script in Ubuntu 16.04 LTS.
+You can also use the [insall script](https://github.com/mediaic/DL_Practice/blob/master/install.sh) in Ubuntu 16.04 LTS.
 
 ## References
