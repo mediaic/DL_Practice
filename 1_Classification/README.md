@@ -24,7 +24,7 @@ train_set = datasets.MNIST('./data', train=True, download=True,
 test_set = datasets.MNIST('./data', train=False, transform=transforms.Compose([
                            transforms.ToTensor(),
                            transforms.Normalize((0.1307,), (0.3081,))
-                       ]))
+                       ])),
 ```
 
 ## Visualization
@@ -47,9 +47,9 @@ Let’s train different models for recognizing MNIST digits! Please compare the 
 
 3. Try to get better performance by adding more layers and using [learning rate decay](https://pytorch.org/docs/master/optim.html#how-to-adjust-learning-rate).
 
-4. Build a convolutional neural network with two [convolutional layers](https://pytorch.org/docs/master/nn.html#torch.nn.Conv2d), followed by one fully connected layer using [Adam optimizer](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.Adam). (Both Conv1 and Conv2: 16@5x5 filters at stride 2, padding=’SAME’)
+4. Build a convolutional neural network with two [convolutional layers](https://pytorch.org/docs/master/nn.html#torch.nn.Conv2d), followed by one fully connected layer using [Adam optimizer](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.Adam). (Both Conv1 and Conv2: 16@5x5 filters at stride 2)
 
-5. Now, please replace the strides by a [max pooling](https://pytorch.org/docs/master/nn.html#maxpool2d) operation of stride 2, kernel size 2 ,and padding=’SAME’.
+5. Now, please replace the strides by a [max pooling](https://pytorch.org/docs/master/nn.html#maxpool2d) operation of stride 2, kernel size 2.
 
 6. Apply [dropout](https://pytorch.org/docs/master/nn.html#dropout-layers) to the hidden layer of your models. Note that dropout should only be introduced during training, not evaluation.  
 
