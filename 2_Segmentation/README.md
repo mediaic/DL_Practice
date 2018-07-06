@@ -17,7 +17,7 @@ seg_data.zip
  ⊢ validation/
 ```
 
-[Download](https://drive.google.com/file/d/11UOONxz2djoeKbEGeh7ihxw3W3YCoTrq/view?usp=sharing)
+[Download](https://drive.google.com/file/d/11UOONxz2djoeKbEGeh7ihxw3W3YCoTrq/view?usp=sharing)  
 **Please DO NOT distribute the data for other purposes.**
 
 ### Training set
@@ -38,10 +38,10 @@ seg_data.zip
 ### Loading pre-trained VGG16 weights
 ![VGG](https://i.imgur.com/RQadXlb.png)
 
-The parameters of above layers can be initialize with VGG16 weights trained on ImageNet. Detailed network settings can be found [here](https://github.com/meetshah1995/pytorch-semseg/blob/master/ptsemseg/models/fcn.py).
+The parameters of above layers can be initialize with VGG16 weights trained on ImageNet. Detailed network settings can be found [here](https://github.com/meetshah1995/pytorch-semseg/blob/master/ptsemseg/models/fcn.py).  
 You can also directly extract block5 features using torchvision functions.
 
-```
+```python
 from torchvision import models
 
 vgg = models.vgg16(pretrained=True)
@@ -67,7 +67,7 @@ For each class, the IoU is defined as:
 
 To be more specific, it can be calculated as the ratio of the **overlap area** to the **union area** of ground-truth and prediction.
 
-![IOU](https://i.imgur.com/zhCdhwG.png =350x)
+<img src="https://i.imgur.com/zhCdhwG.png" height="350">
 
 ### Mean Intersection over Union (mIoU)
 The mIoU is calculated by averaging over all classes except for **Unknown(0,0,0)**. Please note that mIoU need to be calculated over all validation images not a single one.
