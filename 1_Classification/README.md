@@ -46,7 +46,7 @@ See tutorials and examples of [tensorboardX](https://github.com/lanpa/tensorboar
 ## Problem sets
 Let’s train different models for recognizing MNIST digits! Please compare the convergence time and test accuracy by plotting the learning curves using tensorboard.
 
-1. Build a softmax regression model with [a single linear layer](https://pytorch.org/docs/stable/nn.html#linear-layers) using [stochastic gradient descent (SGD)](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.SGD).  
+1. Build a softmax classification model with [a single linear layer](https://pytorch.org/docs/stable/nn.html#linear-layers) using [stochastic gradient descent (SGD)](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.SGD).  
 
 2. Build a 1-hidden layer neural network with 1024 [ReLU units](https://pytorch.org/docs/stable/nn.html#relu) using SGD. This model should improve your test accuracy.
 
