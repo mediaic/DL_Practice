@@ -61,9 +61,11 @@ features5 = nn.Sequential(*list(vgg.features.children()))
 
 ## Problem Sets
 Please compare the convergence time and accuracy by plotting the learning curves using tensorboard.
-1. Train a FCN 32s model from draft. (i.e., you cannot use pre-trained weights)
 
-2. Train a FCN 32s model initialized with the parameters pre-trained on ImageNet.
+1. Train a FCN 32s model initialized with the parameters pre-trained on ImageNet.
+
+2. Train a FCN 32s model from draft. (i.e., you cannot use pre-trained weights. Please note that it might be ***VERY DIFFICULT*** to get a preferable performance. Do not stuck on this problem since it is just for comparison.)
+
 
 [***optional***]
 
