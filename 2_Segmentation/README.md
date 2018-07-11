@@ -10,6 +10,17 @@ Semantic segmentation predicts a label to each pixel with CNN models.
 * Input : RGB image
 * Output : pixel-wise label prediction
 
+
+| Object | Color | Label ID |
+| -------- | -------- | -------- |
+| Urban land | Cyan: (0,255,255) | 0    |
+| Agriculture land | Yellow: (255,255,0) | 1    |
+| Rangeland | Purple: (255,0,255) | 2    |
+| Forest land  | Green: (0,255,0) | 3    |
+| Water | Blue: (0,0,255) | 4    |
+| Barren land | White: (255,255,255) | 5    |
+| Unknown | Black: (0,0,0) | 6    |
+
 ## Dataset Description
 ```
 seg_data.zip
