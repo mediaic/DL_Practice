@@ -11,20 +11,25 @@ Before we start this practice, you need to understand how PyTorch framework (ten
 
 The [MNIST](http://yann.lecun.com/exdb/mnist/) dataset comprises 60,000 training examples and 10,000 test examples of the handwritten digits 0–9, formatted as 28x28-pixel monochrome images.
 
-You can simply download the data with the torchvision API
+You can simply download the data with the torchvision API 
 ```python
 from torchvision import datasets, transforms
 
-train_set = datasets.MNIST('./data', train=True, download=True,
-                           transform=transforms.Compose([
-                           transforms.ToTensor(),
-                           transforms.Normalize((0.1307,), (0.3081,))
-                       ]))
-                                      
-test_set = datasets.MNIST('./data', train=False, transform=transforms.Compose([
-                           transforms.ToTensor(),
-                           transforms.Normalize((0.1307,), (0.3081,))
-                       ]))
+BATCH_SIZE = 64
+
+train_loader = torch.utils.data.DataLoader(
+    datasets.MNIST('./data', train=True, download=True, transform=transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+    ])), 
+    batch_size=BATCH_SIZE, shuffle=True)
+
+test_loader = torch.utils.data.DataLoader(
+    datasets.MNIST('./data', train=False, transform=transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+    ])), 
+    batch_size=BATCH_SIZE, shuffle=True)
 ```
 
 ## Visualization
