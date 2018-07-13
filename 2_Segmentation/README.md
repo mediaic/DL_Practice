@@ -61,7 +61,7 @@ pool5_model = nn.Sequential(*list(vgg.features.children()))
 
 Apply more conv layers and transpose convolution layers after pool5_model
 ```python
-deconv = nn.ConvTranspose2d(num_classes, num_classes, kernel_size=64, stride=32, bias=False)
+deconv = nn.ConvTranspose2d(512, num_classes, kernel_size=64, stride=32, bias=False)
 ```
 
 ## Problem Sets
