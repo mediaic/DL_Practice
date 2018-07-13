@@ -59,7 +59,7 @@ pool5_model = nn.Sequential(*list(vgg.features.children()))
 ### Fully Convolutional Network (FCN)
 ![FCN32s](https://i.imgur.com/lH1u07f.png)
 
-Apply more conv layers and transpose convolution layers after pool5_model
+Apply transpose convolution layers after pool5_model, for example:
 ```python
 deconv = nn.ConvTranspose2d(512, num_classes, kernel_size=64, stride=32, bias=False)
 ```
