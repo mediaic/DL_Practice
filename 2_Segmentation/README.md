@@ -43,9 +43,6 @@ seg_data.zip
 
 ## Implementation
 
-### Fully Convolutional Network (FCN)
-![FCN32s](https://i.imgur.com/x8PX7ZX.png)
-
 ### Loading pre-trained VGG16 weights
 ![VGG](https://i.imgur.com/RQadXlb.png)
 
@@ -56,7 +53,15 @@ You can also directly extract block5 features using torchvision functions.
 from torchvision import models
 
 vgg = models.vgg16(pretrained=True)
-features5 = nn.Sequential(*list(vgg.features.children()))
+pool5_model = nn.Sequential(*list(vgg.features.children()))
+```
+
+### Fully Convolutional Network (FCN)
+![FCN32s](https://i.imgur.com/lH1u07f.png)
+
+Apply more conv layers and transpose convolution layers after pool5_model
+```python
+deconv = nn.ConvTranspose2d(num_classes, num_classes, kernel_size=64, stride=32, bias=False)
 ```
 
 ## Problem Sets
