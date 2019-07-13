@@ -62,6 +62,6 @@ It is important to save your model at any time, especially when you want to repr
 
 Now please save the model which achieves best performance among the above variants. Try to reproduce your results using the save/load functions instead of running a new training procedure.
 
-##Bonus
+## Bonus
 If you have time, you can use the technique of transfer learning to achieve better performance of semantic segmentation.
 Detailed discription is in [Segmentation Practice](https://github.com/mediaic/DL_Practice/tree/master/2018/2_Segmentation)
