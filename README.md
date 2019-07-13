@@ -7,7 +7,7 @@ In this practice, you will train a simple neural network classifier and play wit
 Before we start this practice, you need to understand how PyTorch framework (tensor, gradient, network, loss function, optimizer) works. Please refer to [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) and [examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html).
 
 ## Dataset
-![CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar-10-sample/cat6.png)
+![CIFAR-10](https://storage.googleapis.com/kaggle-competitions/kaggle/3649/media/cifar-10.png)
 
 The [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images. 
 
@@ -18,30 +18,19 @@ from torchvision import datasets, transforms
 BATCH_SIZE = 64
 
 train_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('./data', train=True, download=True, transform=transforms.Compose([
+    datasets.CIFAR10('./data', train=True, download=True, transform=transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])), 
     batch_size=BATCH_SIZE, shuffle=True)
 
 test_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('./data', train=False, transform=transforms.Compose([
+    datasets.CIFAR10('./data', train=False, transform=transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])), 
     batch_size=BATCH_SIZE, shuffle=True)
 ```
-
-## Visualization
-
-![tensorboard](https://www.tensorflow.org/images/mnist_tensorboard.png)
-
-Please use tensorboard to visualize learning curves of different models in the following problem sets.  
-Note that you need to additionaly install tensorboardX if using PyTorch.
-```shell
-pip3 install tensorboardX
-```
-See tutorials and examples of [tensorboardX](https://github.com/lanpa/tensorboard-pytorch).
 
 ## Problem sets
 Let’s train different models for recognizing CIFAR-10 classes! Please compare the convergence time and test accuracy by plotting the learning curves using tensorboard.
@@ -60,6 +49,8 @@ Let’s train different models for recognizing CIFAR-10 classes! Please compare 
 
 7. Load [ResNet18 pre-trained model](https://pytorch.org/docs/stable/torchvision/models.html#id3) and finetune on the CIFAR-10 dataset.
 
+8. Train ResNet18 from scratch and compare the result to problem 7.
+
 [***Optional***]
 
 7. Apply [batch normalization](https://pytorch.org/docs/stable/nn.html?highlight=batchnorm#normalization-layers) to your models.
@@ -70,3 +61,7 @@ Let’s train different models for recognizing CIFAR-10 classes! Please compare 
 It is important to save your model at any time, especially when you want to reproduce your results or contiune the training procedure. One can easily save the model and the parapeters by using the [save/load functions](https://pytorch.org/docs/master/notes/serialization.html). While please also note that when you need to resume training, you should follow this [example](https://discuss.pytorch.org/t/saving-and-loading-a-model-in-pytorch/2610/3) to save all required state dictionaries.
 
 Now please save the model which achieves best performance among the above variants. Try to reproduce your results using the save/load functions instead of running a new training procedure.
+
+##Bonus
+If you have time, you can use the technique of transfer learning to achieve better performance of semantic segmentation.
+Detailed discription is in [Segmentation Practice](https://github.com/mediaic/DL_Practice/tree/master/2018/2_Segmentation)
