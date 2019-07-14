@@ -33,7 +33,7 @@ test_loader = torch.utils.data.DataLoader(
 ```
 
 ## Problem sets
-Let’s train different models for recognizing CIFAR-10 classes! Please compare the convergence time and test accuracy by plotting the learning curves using tensorboard.
+Let’s train different models for recognizing CIFAR-10 classes! Please compare the convergence time and test accuracy.
 
 1. Build a softmax classification model with [a single linear layer](https://pytorch.org/docs/stable/nn.html#linear-layers) using [stochastic gradient descent (SGD)](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.SGD).  
 
@@ -64,4 +64,4 @@ Now please save the model which achieves best performance among the above varian
 
 ## Bonus
 If you have time, you can use the technique of transfer learning to achieve better performance of semantic segmentation.
-Detailed discription is in [Segmentation Practice](https://github.com/mediaic/DL_Practice/tree/master/2018/2_Segmentation)
+Detailed discription is in [Segmentation Practice](https://github.com/mediaic/DL_Practice/tree/master/2018/2_Segmentation).
