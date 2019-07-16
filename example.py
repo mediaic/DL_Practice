@@ -2,6 +2,17 @@
 ## TODO ##
 
 
+
+# define your oen model
+class Onefc(nn.Module):
+    def __init__(self):
+        super(Onefc, self).__init__()
+        self.fc = nn.Linear(32*32*3, 10)
+    def forward(self, x):
+        x = self.fc(x)
+        return x
+ 
+ 
 def train(num_epoch):
     # create dataset
     ## TODO ##
