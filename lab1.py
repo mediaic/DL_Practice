@@ -37,3 +37,5 @@ for epoch in range(10):
 		loss_pre.backward()
 		optimizer.step()
 	print(loss_sum)
+    
+    # evaluate and save model
