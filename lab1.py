@@ -19,7 +19,7 @@ test_loader = torch.utils.data.DataLoader(
     batch_size=BATCH_SIZE, shuffle=True)
 
 model = nn.Sequential(
-nn.Linear(32*32*3, 1024)
+nn.Linear(32*32, 10)
 )
 
 loss = nn.CrossEntropyLoss()
