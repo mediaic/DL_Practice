@@ -2,7 +2,7 @@
 ## TODO ##
 
 
-def train():
+def train(num_epoch):
     # create dataset
     ## TODO ##
     
@@ -20,7 +20,7 @@ def train():
         ## TODO ##
             
         
-        # save model
+        # evaluate and save model
         
         
         
