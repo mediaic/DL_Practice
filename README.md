@@ -6,6 +6,16 @@ In this practice, you will train a simple neural network classifier and play wit
 
 Before we start this practice, you need to understand how PyTorch framework (tensor, gradient, network, loss function, optimizer) works. Please refer to [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) and [examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html).
 
+## Prerequisites
+* python3.5+
+* CUDA 9.0
+* cuDNN 7
+* Pytorch 1.0
+```
+pip3 install torch
+pip3 install torchvision  
+```
+
 ## Dataset
 ![CIFAR-10](https://storage.googleapis.com/kaggle-competitions/kaggle/3649/media/cifar-10.png)
 
