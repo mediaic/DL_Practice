@@ -18,9 +18,9 @@ pip3 install torchvision
 ```
 
 ## Dataset
-![CIFAR-10](https://storage.googleapis.com/kaggle-competitions/kaggle/3649/media/cifar-10.png)
+![CIFAR-100](https://storage.googleapis.com/kaggle-competitions/kaggle/3649/media/cifar-10.png)
 
-The [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images. 
+The [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html) dataset consists of 60000 32x32 colour images in 100 classes, with 600 images per class. There are 50000 training images and 10000 test images. 
 
 You can simply download the data with the torchvision API 
 ```python
@@ -29,14 +29,14 @@ from torchvision import datasets, transforms
 BATCH_SIZE = 64
 
 train_loader = torch.utils.data.DataLoader(
-    datasets.CIFAR10('./data', train=True, download=True, transform=transforms.Compose([
+    datasets.CIFAR100('./data', train=True, download=True, transform=transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])), 
     batch_size=BATCH_SIZE, shuffle=True)
 
 test_loader = torch.utils.data.DataLoader(
-    datasets.CIFAR10('./data', train=False, transform=transforms.Compose([
+    datasets.CIFAR100('./data', train=False, transform=transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])), 
@@ -44,7 +44,7 @@ test_loader = torch.utils.data.DataLoader(
 ```
 
 ## Problem sets
-Let’s train different models for recognizing CIFAR-10 classes! Please compare the convergence time and test accuracy.
+Let’s train different models for recognizing CIFAR-100 classes! Please compare the convergence time and test accuracy.
 
 1. Build a softmax classification model with [a single linear layer](https://pytorch.org/docs/stable/nn.html#linear-layers) using [stochastic gradient descent (SGD)](https://pytorch.org/docs/stable/optim.html?highlight=gradient%20descent#torch.optim.SGD).  
 
@@ -58,7 +58,7 @@ Let’s train different models for recognizing CIFAR-10 classes! Please compare 
 
 6. Apply [dropout](https://pytorch.org/docs/master/nn.html#dropout-layers) to the hidden layer of your models. Note that dropout should only be introduced during training, not evaluation.  
 
-7. Load [ResNet18 pre-trained model](https://pytorch.org/docs/stable/torchvision/models.html#id3) and finetune on the CIFAR-10 dataset.
+7. Load [ResNet18 pre-trained model](https://pytorch.org/docs/stable/torchvision/models.html#id3) and finetune on the CIFAR-100 dataset.
 
 8. Train ResNet18 from scratch and compare the result to problem 7.
 
